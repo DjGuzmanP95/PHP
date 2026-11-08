@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios PHP</title>
+</head>
+
+<body>
+    <ol start="8">
+         <li>
+            <h3>Ejercicio 8. Conversor de Divisas</h3>
+
+            <p>
+                Introduce una cantidad de dinero y selecciona
+                las divisas de origen y destino para realizar
+                la conversión.
+            </p>
+
+            <form action="Ejercicios_php.php" method="post">
+
+                <input type="hidden" name="conversor" value="ej08">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Selección</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label for="cantidad">Cantidad:</label>
+                            </td>
+                            <td>
+                                <input
+                                    type="number"
+                                    name="cantidad"
+                                    id="cantidad"
+                                    min="0.01"
+                                    step="0.01"
+                                    required
+                                >
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="origen">Divisa de origen:</label>
+                            </td>
+                            <td>
+                                <select name="origen" id="origen" required>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="USD">USD - Dólar</option>
+                                    <option value="GBP">GBP - Libra Esterlina</option>
+                                    <option value="JPY">JPY - Yen Japonés</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="destino">Divisa de destino:</label>
+                            </td>
+                            <td>
+                                <select name="destino" id="destino" required>
+                                    <option value="EUR">EUR - Euro</option>
+                                    <option value="USD">USD - Dólar</option>
+                                    <option value="GBP">GBP - Libra Esterlina</option>
+                                    <option value="JPY">JPY - Yen Japonés</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" value="Convertir">
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+
+            </form>
+
+        </li>
+
+        <li>
+            <h3>Ejercicio 9. Calculadora de IMC</h3>
+
+            <p>
+                Introduce tu peso y altura para calcular
+                el Índice de Masa Corporal (IMC).
+            </p>
+
+            <form action="Ejercicios_php.php" method="post">
+
+                <input type="hidden" name="imc" value="ej09">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label for="peso">Peso (kg):</label>
+                            </td>
+                            <td>
+                                <input
+                                    type="number"
+                                    name="peso"
+                                    id="peso"
+                                    min="0.01"
+                                    step="0.01"
+                                    required
+                                >
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="altura">Altura (metros):</label>
+                            </td>
+                            <td>
+                                <input
+                                    type="number"
+                                    name="altura"
+                                    id="altura"
+                                    min="0.01"
+                                    step="0.01"
+                                    required
+                                >
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" value="Calcular IMC">
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </form>
+
+        </li>
+
+        <li>
+            <h3>Ejercicio 11. Cesta de la Compra con Descuentos</h3>
+
+            <p>Crea un sistema de cesta de la compra que gestione múltiples productos con sus precios y cantidades.
+                El programa debe:
+            </p>
+            <ul>
+                <li>
+                    Usar un array bidimensional con productos predefinidos (nombre, precio unitario, categoría)
+                    Página 4
+                </li>
+                <li>
+
+                    Recibir las cantidades de cada producto a comprar mediante formulario
+
+                </li>
+                <li>
+
+                    Aplicar descuentos por cantidad: 10% si compras 5+ unidades del mismo producto, 20% si compras 10+
+
+                </li>
+                <li>
+
+                    Calcular IVA según categoría: Alimentación 4%, Bebidas 10%, Electrónica 21%
+
+                </li>
+                <li>
+
+                    Mostrar ticket (tabla HTML) detallado con: subtotal por producto, descuentos aplicados, base
+                    imponible,
+                    IVA y total final
+                    Datos del formulario
+                    <ul>
+                        <li>
+                            Manzanas (1.50€/kg - Alimentación)
+                        </li>
+                        <li>
+                            Leche (0.90€/litro - Alimentación)
+                        </li>
+                        <li>
+                            Pan (1.20€/unidad - Alimentación)
+                        </li>
+                        <li>
+                            Cerveza (2.50€/pack - Bebidas)
+                        </li>
+                        <li>
+                            Refresco (1.80€/pack - Bebidas)
+                        </li>
+                        <li>
+                            Ratón inalámbrico (25.00€ - Electrónica)</li>
+                    </ul>
+                </li>
+            </ul>
+            <form action="Ejercicios_php.php" method="post">
+                <input type="hidden" name="cesta" value="ej11">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><label for="manzanas">Manzanas (1.50€/kg - Alimentación): </label>
+                            </td>
+                            <td><input type="number" name="manzanas" id="manzanas" min="0" value="0"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="leche">Leche (0.90€/litro - Alimentación): </label>
+                            </td>
+                            <td><input type="number" name="leche" id="leche" min="0" value="0"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="pan">Pan (1.20€/unidad - Alimentación): </label>
+                            </td>
+                            <td><input type="number" name="pan" id="pan" min="0" value="0"></td>
+                        </tr>
+                        <tr>
+                            <td> <label for="cerveza">Cerveza (2.50€/pack - Bebidas): </label>
+                            </td>
+                            <td><input type="number" name="cerveza" id="cerveza" min="0" value="0"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="refresco">Refresco (1.80€/pack - Bebidas): </label>
+                            </td>
+                            <td><input type="number" name="refresco" id="refresco" min="0" value="0"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="raton">Ratón inalámbrico (25.00€ - Electrónica): </label>
+                            </td>
+                            <td><input type="number" name="raton" id="raton" min="0" value="0"></td>
+                        </tr>
+                    </tbody>     
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Calcular ticket"></td>
+                        </tr>
+                    </tfoot>               
+                </table>
+                
+
+                <!-- Dejo el min = 0 en todos los inputs pa que no de porsaco después desde php, más adelante controlaremos los valores que me entran en un formulario desde bakcend :) -->
+            </form>
+
+        </li>
+    </ol>
+</body>
+
+</html>
